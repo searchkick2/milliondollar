@@ -200,7 +200,7 @@ body{
       <div style="border-style: solid; background-color: white;
     border-width: 3px; width: 515px; margin-left: 400px; padding: 5px;"  >
       <div >
-        <h5 style="color: red;"><%= link_to upload.user.username%></h5>
+        <h5 style="color: red;"><%= link_to upload.user.username,user_path(upload.user)%></h5>
         <h5><%=upload%></h5>
         <br>
         <br>

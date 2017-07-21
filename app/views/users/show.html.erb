@@ -1,6 +1,23 @@
 <h2><%=@user.username%></h2>
 <%@user.uploads.each do |upload|%>
-<%if upload.avatar_url.split('.')[1] == "jpg"%>
+<div style="border-style: solid; background-color: white;
+    border-width: 3px; width: 515px; margin-left: 400px; padding: 5px;"  >
+
+ <div >
+        <h5 style="color: red;"><%=upload.user.username%></h5>
+        <h5><%=upload%></h5>
+        <br>
+        <br>
+        
+        <%if upload.avatar_url.split('.')[1] == "jpg"%>
         <img class="myimg" src = "<%= upload.avatar_url %>" style = "width: 500px; height: 300px;" >
+        <%elsif upload.avatar_url.split('.')[1] == "mp4"%>
+        <video class="myimg" src = "<%= upload.avatar_url %>" controls style = "width: 500px; height: 300px;" type = "video/mp4" ></video>
+        <%elsif upload.avatar_url.split('.')[1] == "mp3"%>          
+        <audio class="myimg" controls>
+        <source  src= "<%= upload.avatar_url %>" type="audio/mpeg">
+        </audio>
         <%end%>
+      </div>
+      </div>
         <%end%>
