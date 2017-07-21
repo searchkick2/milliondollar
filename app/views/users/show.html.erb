@@ -1,0 +1,6 @@
+<h2><%=@user.username%></h2>
+<%@user.uploads.each do |upload|%>
+<%if upload.avatar_url.split('.')[1] == "jpg"%>
+        <img class="myimg" src = "<%= upload.avatar_url %>" style = "width: 500px; height: 300px;" >
+        <%end%>
+        <%end%>
